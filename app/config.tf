@@ -1,9 +1,9 @@
-terraform {
-  backend "gcs" {
-    bucket = "nc-alex-tf-state"
-    prefix = "gitops-demo-config"
-  }
-}
+#terraform {
+#  backend "gcs" {
+#    bucket = "nc-alex-tf-state"
+#    prefix = "gitops-demo-config"
+#  }
+#}
 
 provider "kubernetes" {
   host                   = "https://${data.google_container_cluster.primary.endpoint}"
