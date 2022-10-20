@@ -30,7 +30,7 @@ resource "kubernetes_deployment" "demo_app" {
       spec {
         container {
           name  = local.app_name
-          image = "europe-west4-docker.pkg.dev/nc-alex-bakker/alex-sandbox/gitops-demo:${file("./app_version.txt")}"
+          image = "europe-west4-docker.pkg.dev/nc-alex-bakker/alex-sandbox/gitops-demo:${trimpspace(file("./app_version.txt"))}"
           liveness_probe {
             http_get {
               path = "/health"
