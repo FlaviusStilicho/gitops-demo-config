@@ -1,1 +1,1 @@
-latest
+{{ github.run_number }}
