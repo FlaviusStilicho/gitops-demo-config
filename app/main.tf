@@ -31,11 +31,13 @@ resource "kubernetes_deployment" "demo_app" {
         container {
           name  = local.app_name
           image = "alexbakker/gitops-demo:${trimspace(file("./app_version.txt"))}"
-          liveness_probe {
-            http_get {
-              path = "/health"
-              port = "http"
-            }
+#          liveness_probe {
+#            http_get {
+#              path = "/health"
+#              port = "http"
+#            }
+#            initialDelaySeconds : 15
+#            periodSeconds : 5
           }
           port {
             name           = "http"
