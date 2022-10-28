@@ -27,7 +27,7 @@ resource "kubernetes_manifest" "demo_repo" {
     }
     spec = {
       interval = "30s"
-      url      = "https://github.com/FlaviusStilicho/gitops-demo-config"
+      url      = var.repository_url
       ref      = {
         branch = "master"
       }
