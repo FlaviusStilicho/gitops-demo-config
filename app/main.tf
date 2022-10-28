@@ -38,7 +38,7 @@ resource "kubernetes_deployment" "demo_app" {
 #            }
 #            initialDelaySeconds : 15
 #            periodSeconds : 5
-          }
+#          }
           port {
             name           = "http"
             container_port = local.app_port
